@@ -1,0 +1,29 @@
+<!--
+  Generated template for the CategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+  <ion-searchbar padding placeholder="请输入您想要的商品" (click)="gotoSearch()"></ion-searchbar> 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <img src="{{cateAds['ad_code']}}" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="categories.length>0">
+      <button ion-item *ngFor="let cate of categories" (click)="gotoGoodsList(cate['id'])">
+        <ion-thumbnail item-end>
+          <img src="{{cate['image']}}" alt="" *ngIf="cate['image']">
+        </ion-thumbnail>
+        {{cate['name']}}
+      </button>
+  
+  </ion-list>
+</ion-content>

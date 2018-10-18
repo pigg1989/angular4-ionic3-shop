@@ -1,0 +1,23 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <form novalidate action="javascript:return true;">
+      <ion-list>
+          <ion-item class="search">
+            <ion-input placeholder="请输入您要搜索的产品" type="search" autofocus="true" [(ngModel)]="keywords" name="search" (keyup)="onSearchKeyUp($event)"></ion-input>
+            <ion-icon name="search" item-end (tap)="search(keywords)"></ion-icon>
+            
+          </ion-item>
+        </ion-list>
+  </form>
+   
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content>

@@ -1,0 +1,54 @@
+<!--
+  Generated template for the PointsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>明细列表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  *ngIf="points.length>1">
+  <ion-list *ngIf="type==='recharge'">
+    <ion-item *ngFor="let point of points">
+      <span>{{point['ctime']*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+      <span>{{dongci}}</span>
+      <span color="danger">{{point['account']}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="type==='points'">
+    <ion-item *ngFor="let point of points">
+      <span>{{point['change_time']*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+      <span>{{point['desc']}}</span>      
+      <span color="danger">{{point['pay_points']}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="type==='all'">
+    <ion-item *ngFor="let point of points">
+    <span>{{point['change_time']*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+    <span>{{point['desc']}}</span>
+    <span color="danger">{{point['pay_points']}}</span>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list *ngIf="type==='withDrawals'">
+    <ion-item *ngFor="let point of points">
+      <span>{{point['create_time']*1000 |  date:'yyyy-MM-dd HH:mm:ss'}}</span>
+      <span>申请{{point['money']}}</span>
+      <span color="danger" *ngIf="point['status'] ===1">成功</span>
+    </ion-item>
+  
+  </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

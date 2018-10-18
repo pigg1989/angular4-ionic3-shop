@@ -1,0 +1,37 @@
+<!--
+  Generated template for the AddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>地址管理</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid *ngIf="address.length>0">
+    <ion-row *ngFor="let a of address" (tap)="chooseAddress(a['address_id'])">
+      <ion-col col-3>
+        {{a['consignee']}}
+        <button ion-button small color="danger" *ngIf="a['is_default'] === 1">默认</button>
+      </ion-col>
+
+      <ion-col col-8>
+        <span>电话：{{a['mobile']}}</span>
+        <p>{{a['address']}}</p>
+      </ion-col>
+
+      <ion-col col-1>
+        <ion-icon name="notebook"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div>
+    <button ion-button large full (click)="gotoAddAddress()">添加地址</button>
+  </div>
+</ion-content>

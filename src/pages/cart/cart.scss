@@ -1,0 +1,31 @@
+page-cart {
+    ion-navbar,ion-title{
+        background: $mainColor;
+        color: $headTitleColor;
+         .toolbar-title {
+           color: $headTitleColor !important;
+         }
+
+      
+    }
+    ion-slide{
+        ion-toolbar *{
+            background-color: $mainColor;
+           
+        }
+    }
+   
+    .cartnull{
+        width: 200px;
+        
+    }
+    ion-footer{
+        ion-toolbar{
+            *{
+                padding: 0px !important;
+                margin: 0px !important;
+            }
+        }
+    }
+
+}

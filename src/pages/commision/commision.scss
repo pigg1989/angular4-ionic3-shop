@@ -1,0 +1,25 @@
+page-commision {
+    ion-card{
+        margin: 0px !important;
+    }
+    img{
+        width: 100px !important;
+        height: 100px !important;
+        display: block;
+        margin: auto;
+    }
+    .fir_content{
+        background: $mainColor;
+        
+        *{
+            background: $mainColor;
+        }
+        h2{
+            margin-top: 5px;
+            color: #d3d3d3;
+        }
+        p{
+            color: #fff;
+        }
+    }
+}

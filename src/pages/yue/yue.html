@@ -1,0 +1,56 @@
+<!--
+  Generated template for the YuePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的余额</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 padding class="fir_content">
+        <div>
+          <h2>可用余额</h2>
+          <p>￥{{userInfo['user_money']}}</p>
+
+        </div>
+        
+      </ion-col>
+
+      <ion-col col-6 padding class="fir_content">
+        <div>
+
+        <h2>可用积分</h2>
+        <p>￥{{userInfo['pay_points']}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6 text-center padding (click)="gotoWithdraw()">
+        <img src="assets/imgs/tixian.png" alt="">
+        <span>提现</span>
+      </ion-col>
+
+      <ion-col col-6 text-center padding (click)="gotoRecharge()">
+        <img src="assets/imgs/chongzhi.png">
+        <span>充值</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <button ion-item (click)="gotoPoints('recharge')">充值明细</button>
+    <button ion-item (click)="gotoPoints('points')">积分明细</button>    
+    <button ion-item (click)="gotoPoints('all')">账户明细</button>
+    <button ion-item (click)="gotoPoints('withDrawals')">申请记录</button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,16 @@
+page-goods-list {
+   
+    ion-item{
+         h2,
+         p {
+           white-space: normal;
+         }
+         p{
+             color: red !important;
+         }
+         img{
+             width: dpr2real(180px) !important;
+             height: dpr2real(180px) !important;
+         }
+    }
+}

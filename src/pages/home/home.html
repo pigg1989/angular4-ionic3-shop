@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-searchbar placeholder="请输入想要的产品" (click)="gotoSearch()"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides>
+    <ion-slide *ngFor="let iad of indexAds">
+      <img src="{{iad.ad_code}}" alt="">
+    </ion-slide>
+  </ion-slides>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 (click)="gotoUgouwu(1)" class="nav_col">
+        <ion-card>
+          <ion-item class="nav_ion"  text-center>
+            <ion-avatar>
+              <img src="assets/icon/ugouwu.png" alt="">
+            </ion-avatar>
+            <h2 class="nav_tit">U购物</h2>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-3  (click)="gotoUgouwu(2)" class="nav_col">
+        <ion-card>
+          <ion-item class="nav_ion"  text-center>
+            <ion-avatar>
+              <img src="assets/icon/uzhongcou.png" alt="">
+            </ion-avatar>
+            <h2 class="nav_tit">U收益</h2>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-3 (click)="gotoUgouwu(3)" class="nav_col">
+        <ion-card>
+          <ion-item class="nav_ion"  text-center>
+            <ion-avatar>
+              <img src="assets/icon/utiyan.png" alt="">
+            </ion-avatar>
+            <h2 class="nav_tit">U体验</h2>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-3 (click)="gotoUgouwu(4)" class="nav_col">
+        <ion-card>
+          <ion-item class="nav_ion" text-center>
+            <ion-avatar>
+              <img src="assets/icon/uhaitao.png" alt="">
+            </ion-avatar>
+            <h2 class="nav_tit">U海淘</h2>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+    <ion-row class="fanli_header">
+      <ion-col col-3 class="fanli_icon">
+        <div>
+          <p>返利</p>
+          <p>头条</p>
+        </div>
+
+      </ion-col>
+      <ion-col col-6>
+        <ion-slides ceneredSlides="true" direction="vertical" loop="true" autoplay="1000" *ngIf="articles.length>1">
+          <ion-slide *ngFor="let article of articles">
+            <p *ngFor="let a of article" (tap)="showArticle(a.article_id)">{{a.title}}</p>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+      <ion-col col-3 padding>
+        <a class="more" (tap)="gotoArticleList()">更多&gt;&gt;</a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="tueijian" *ngIf="goodsIndexHotLeft">
+      <ion-col col-7 class="tueijian_left" (click)="gotoGoodsDetails(goodsIndexHotLeft['goods_id'])">
+        <img src="{{goodsIndexHotLeft['original_img']}}" alt="" class="xptj">
+      </ion-col>
+      <ion-col col-5 class="tueijian_right">
+<img src="{{goodsIndexHotRight1.original_img}}" alt="" class="tuangou" (click)="gotoGoodsDetails(goodsIndexHotRight1['goods_id'])">
+
+<img src="{{goodsIndexHotRight2.original_img}}" alt="" class="tuangou" (click)="gotoGoodsDetails(goodsIndexHotRight2['goods_id'])">
+
+
+      </ion-col>
+
+    </ion-row>
+    <ion-row class="product" *ngFor="let goods of goodsIndex">
+      <ion-col col-12 class="product_tit_img" (click)="gotoGoodsList(goods.firstCateId)">
+        <img src="{{goods['firstCateImage']}}" alt="">
+      </ion-col>
+      <ion-col col-3 class="product_main" *ngFor="let g of goods.goods" (click)="gotoGoodsDetails(g.goods_id)">
+        <ion-avatar>
+          <img src="{{g.original_img}}" alt="" class="product_img">
+        </ion-avatar>
+        <ion-row>
+          <ion-col col-sm-12 col-12 class="product_price">￥{{g.shop_price}}</ion-col>
+          <!-- <ion-col  col-sm-12 col-6 class="product_share">
+          <span>U分享</span>
+        </ion-col> -->
+        </ion-row>
+      </ion-col>
+
+      <ion-col col-3 class="product_more" (tap)="gotoGoodsList(goods.firstCateId)">
+        <ion-avatar>
+          <img src="assets/imgs/index_more.png" alt="" class="product_img">
+        </ion-avatar>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

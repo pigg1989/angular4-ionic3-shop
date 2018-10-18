@@ -1,0 +1,73 @@
+page-memeber {  
+    ion-title{
+       
+       background: $mainColor;
+        .toolbar-title{
+            color: $headTitleColor;
+
+        }
+    }
+   .member_basic{
+       background:$mainColor;
+       margin: 0px !important;
+       .memberFace {
+           width: dpr2real(160px) !important;
+           height: dpr2real(160px) !important;
+       }
+        ion-item{
+           border: 0px !important;
+           background: rgba(0,0,0,.1);
+
+        }
+        h2,p{
+            color: #fff;
+            padding-top: 1px;
+        };
+       .nickname {
+         margin-top: 2px !important;
+       }
+
+    }
+    
+
+    .myOrder{
+        margin: 0px;
+        .more{
+            text-align: right;
+            font-size: 8px;
+            font-weight: lighter;
+        }
+        .mo_tit{
+            text-indent: 1.4rem;
+        }       
+        ion-avatar{
+             img{
+                 display: block;
+                 margin: 0 auto;
+                border-radius: 0px !important;
+
+             }
+         }
+         h2{
+             text-align: center;
+             font-weight: bold;
+             margin-top: 2px;
+         }
+         .mo_second{
+             padding: 0px !important;
+         }
+    }
+   .main{
+      
+       .mainIcon{
+           border-radius: 50%;
+           width: 36px;
+           height: 36px;
+           display: block;
+           margin: 0 auto;
+       }
+       p{
+           text-align: center;
+       }
+   }
+}

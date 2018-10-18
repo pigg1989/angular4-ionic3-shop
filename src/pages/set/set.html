@@ -1,0 +1,40 @@
+<!--
+  Generated template for the SetPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <button ion-item>
+    <ion-avatar item-end>
+      <img src="../../assets/imgs/userface.jpg">
+    </ion-avatar>
+    <h2>Finn</h2>
+  </button>
+  <button ion-item>
+    <h2>用户名</h2>
+    <p item-end>{{nickname}}</p>
+  </button>
+  <button ion-item>
+    <h2>当前等级</h2>
+    <p item-end>{{levelName}}</p>
+  </button>
+  <button ion-item>
+    <h2>手机</h2>
+    <p item-end>{{mobile}}</p>
+  </button>
+<button ion-item>
+  <h2>软件版本号</h2>
+  <p item-end>{{version}}</p>
+</button>
+  <button ion-button danger full (click)="logOut()">安全退出</button>
+</ion-content>

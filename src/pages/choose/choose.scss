@@ -1,0 +1,78 @@
+page-choose {
+   
+   
+    ion-content{
+       
+        position: relative;
+        background: transparent !important;
+        padding: 0px !important;
+        .scroll-content{
+           
+            padding: 0px !important;
+            // border: 10px solid blue;
+            background:rgba(0,0,0,.6);
+            padding-bottom: 0px !important;
+           
+        }
+        .zengzhao{
+            width:100%;
+            height:100%;
+        }
+       ion-card{
+        width: 100% !important;
+        padding: 0px !important;
+        margin: 0px !important;
+        margin-left: 0px !important;      
+        overflow: visible;
+        // border: 10px solid #000;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        ion-scroll{
+            max-height: 300px;
+            min-height: 100px;
+            width: 100%;
+            margin: 0px;
+        }
+        ion-list-header{
+            padding-top: 5px;
+        }
+        .first {
+           img {
+             margin-top: -50px;
+            
+           }
+         }
+         ion-label,.input-wrapper,.item-inner,ion-list,ion-item{
+             margin: 0px !important;
+             padding: 0px !important;
+         }
+
+    }
+       .num {
+         input {
+           width: 35px;
+           min-width: 30px;
+           max-width: 100%;
+           text-align: center;
+         }
+        }
+    .spec{
+        
+        ion-col{
+            *{
+                word-break: normal;
+
+            }
+            button{
+                display: block;
+                word-wrap: normal;
+                word-break: normal;
+            }
+            
+        }
+    }
+       
+    }
+   
+}

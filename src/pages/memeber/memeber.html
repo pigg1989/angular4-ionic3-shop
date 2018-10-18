@@ -1,0 +1,135 @@
+<!--
+  Generated template for the MemeberPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+  <ion-list class="member_basic">
+    <ion-item padding *ngIf="isLogin">
+      <ion-avatar item-left>
+        <img src="http://placehold.it/270x270" alt="" class="memberFace">
+      </ion-avatar>
+      <h2 class="nickname" color="light">【{{userInfo['nickname']}}】</h2>
+      <p color="light">&nbsp;会员等级：{{userInfo['level_name']}}</p>
+<p color="light">&nbsp;手机号码：{{userInfo['mobile']}}</p>
+
+    </ion-item>
+
+<ion-item padding *ngIf="!isLogin">
+  <ion-avatar item-left>
+    <img src="http://placehold.it/270x270" alt="" class="memberFace">
+  </ion-avatar>
+  <h2 class="nickname" color="light" (click)="gotoLogin()">【注册/登录】</h2>
+ 
+</ion-item>
+
+  </ion-list>
+  <ion-list class="myOrder">
+    
+      <button ion-item class="mo_second" (click)="gotoOrderList('WAITCCOMMENT')">
+        <ion-label class="mo_tit">我的订单</ion-label>
+        <ion-label class="more">查看更多订单</ion-label>
+      </button>
+      <ion-item class="mo_second">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3 (click)="gotoOrderList('WAITPAY')">
+              <ion-avatar center>
+                <img src="assets/imgs/daifukuan.png" alt="" class="member_icon">
+                <h2>待付款</h2>
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-3>
+              <ion-avatar center  (click)="gotoOrderList('WAITSEND')">
+                <img src="assets/imgs/daifahuo.png" alt="" class="member_icon">
+                <h2>待发货</h2>
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-3>
+              <ion-avatar center (click)="gotoOrderList('WAITRECEIVE')">
+                <img src="assets/imgs/daishouhuo.png" alt="" class="member_icon">
+                <h2>待收货</h2>
+              </ion-avatar>
+            </ion-col>
+            <ion-col col-3>
+              <ion-avatar center (click)="gotoOrderList('WAITCCOMMENT')">
+                <img src="assets/imgs/daipingjia.png" alt="" class="member_icon">
+                <h2>已完成</h2>
+              </ion-avatar>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+  </ion-list>
+
+  <ion-grid class="main">
+    <ion-row>
+      <ion-col col-4 (click)="gotoYue()">
+        <ion-avatar>
+          <img src="assets/imgs/wodeyue.png" alt="" class="mainIcon">
+          <p>我的余额</p>
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-4 (click)="gotoCommision()">
+        <ion-avatar>
+          <img src="assets/imgs/wodeyongjin.png" alt="" class="mainIcon">
+          <p>我的佣金</p>
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-4 (click)="gotoDistribut()">
+        <ion-avatar>
+          <img src="assets/imgs/woyaotueiguang.png" alt="" class="mainIcon">
+          <p>我要推广</p>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 (click)="gotoCollect('collect')">
+        <ion-avatar>
+          <img src="assets/imgs/wodeshoucang.png" alt="" class="mainIcon">
+          <p>我的收藏</p>
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-4>
+        <ion-avatar (click)="gotoMyteam()">
+          <img src="assets/imgs/wodetuanduei.png" alt="" class="mainIcon">
+          <p>我的团队</p>
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-4 (click)="gotoCollect('history')">
+        <ion-avatar>
+          <img src="assets/imgs/liulanlishi.png" alt="" class="mainIcon">
+          <p>浏览历史</p>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-4 (click)="gotoAddress()">
+        <ion-avatar>
+          <img src="assets/imgs/dizhiguanli.png" alt="" class="mainIcon">
+          <p>地址管理</p>
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-4 (click)="gotoArticle()">
+        <ion-avatar>
+          <img src="assets/imgs/kefuzhongxin.png" alt="" class="mainIcon">
+          <p>客服中心</p>
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-4 (click)="gotoSet()">
+        <ion-avatar>
+          <img src="assets/imgs/wodepingjia.png" alt="" class="mainIcon">
+          <p>我的设置</p>
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+</ion-content>

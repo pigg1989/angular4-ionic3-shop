@@ -1,0 +1,39 @@
+page-goods-details {   
+   
+    .basic{
+         .shoucang {
+           button {
+             height: 15px !important;
+             margin-top: -20px !important;
+           }
+         }
+         .goods_tit{
+             color: #666666 !important;
+             font-size: 1.6rem;            
+             white-space: normal;
+             
+         }
+         .goods_price{
+             font-weight: bold;
+             
+         }
+         .goods_light{
+           
+             font-size:1.2rem;
+             color: #333333;
+             font-weight: lighter;
+         }
+         .goods_market_price{
+             text-decoration: line-through;
+         }
+    } 
+   .addShopCar{
+       background-color: #ffcfdb;
+
+   }
+   .buyNow{
+       background-color: #e0204f;
+
+   }
+ 
+}

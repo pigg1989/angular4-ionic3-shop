@@ -1,0 +1,32 @@
+page-yue {
+    ion-grid{
+        padding: 0px;
+    }
+    .fir_content{       
+        height: 150px;
+        text-align: center;
+        background-color: $mainColor;
+        
+        div{
+            margin-top: 30%;
+           
+            h2,
+            p {
+            color: #fff;
+              font-size: 14px;
+              margin: 0px;
+              font-weight: lighter;
+            }
+
+        }
+        
+       
+    }
+    img{
+        height: 22px;
+        vertical-align: middle;
+        &+span{
+            vertical-align: middle;
+        }
+    }
+}

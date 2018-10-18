@@ -1,0 +1,72 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>登陆</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <h2 text-center>优返粒</h2>
+      <p text-center>零投入用好物，高效省钱必备神器</p>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list>
+    <div *ngIf="!isMobileLogin">
+        <ion-item>
+            <ion-label floating>用户名/手机号/邮箱</ion-label>
+            <ion-input type="text" [(ngModel)]="userName"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label floating>登录密码</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+    </div>
+    
+    <form novalidate *ngIf="isMobileLogin" [formGroup]="mobileForm">
+        <ion-item>
+            <ion-label floating>手机号</ion-label>
+            <ion-input type="number" formControlName="mobile"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label floating>验证码</ion-label>
+            <ion-input type="text" formControlName="verify"></ion-input>
+            <button ion-button item-end large (click)="getMobileVerify()" [disabled]="hasGetVerify">{{verifyBtnMsg}}</button>
+          </ion-item>
+    </form>
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="login()">登录</button>
+  </div>
+
+  <ion-grid class="line">
+    <ion-row>
+      <ion-col col-5 class="lineCol"></ion-col>
+      <ion-col col-2>
+        <p color="light">或</p>
+      </ion-col>
+      <ion-col col-5 class="lineCol"></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button outline (click)="mobileLogin()">{{loginBtnMsg}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
